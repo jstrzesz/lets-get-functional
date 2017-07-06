@@ -125,14 +125,12 @@ function mostCommonTags(customers){
 }
 
 //10
-function genders(customers){
-    var summary = {};
-    customers.reduce(function(seed, e, i) {
-    if(summary[e.gender]) summary[e.gender] += 1;
-    if(!summary[e.gender]) summary[e.gender] = 1;
-}, 0);
+
+var genderSummary = customers.reduce(function(summary, person){
+    summary[person.gender]  = ++summary[person.gender] || 1;
     return summary;
-}
+},{});
+
 
 console.log(males);
 console.log(females);
@@ -144,4 +142,4 @@ console.log('The number of customers names that begin with d is ' + beginsWith(c
 console.log('The number of friends names that begin with c is ' + friendsBeginsWith(customers, 'c')) + '.';
 console.log(customerIsFriend(customers, 'Doyle Erikson'));
 console.log('The most common tags are ' + mostCommonTags(customers));
-console.log(genders(customers));
+console.log(genderSummary);
