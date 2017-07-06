@@ -23,6 +23,6 @@
     "sinon": "^1.17.4"
   },
   "dependencies": {
-    "lodown-jstrzesz": "^1.0.8"
+    "lodown-jstrzesz": "^1.0.9"
   }
 }
